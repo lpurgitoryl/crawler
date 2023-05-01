@@ -1,0 +1,5 @@
+name: crawler
+dependencies:
+    - python
+    - pip:
+        - praw
