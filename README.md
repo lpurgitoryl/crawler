@@ -2,7 +2,7 @@
 
 CS172 Crawler Project  
 Team Memembers:  
-Nicole Garcia @lpurigitoryl  
+Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)
 
 ---
 
@@ -16,4 +16,4 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 `conda env create -f environment.yml`
 
 3) Activate `crawler` environment with
-`source activate crawler`
+`activate crawler`
