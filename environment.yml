@@ -1,5 +1,8 @@
 name: crawler
 dependencies:
     - python
+    - ipykernel
+    - jupyter
+    - pandas
     - pip:
         - praw
