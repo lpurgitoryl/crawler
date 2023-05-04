@@ -3,6 +3,7 @@
 CS172 Crawler Project  
 Team Memembers:  
 Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)
+
 Miguelangel Tinoco [@Tinic0405](https://github.com/Tinoco451)
 ## Setting Up The Environment
 
