@@ -7,6 +7,3 @@ dependencies:
     - pip
     - pip:
         - praw
-        - validators
-
-
