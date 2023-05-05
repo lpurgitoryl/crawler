@@ -1,5 +1,6 @@
 import praw
 import pandas as pd
+import os
 import json
 import pprint
 
@@ -9,9 +10,24 @@ import pprint
 # __name__
 if __name__=="__main__":
     
-    reddit = praw.Reddit(client_id="3IS_PPpIX3IkVIh-1f8cHQ",
-    client_secret="AvAKHMywUgLyGlVSVD0bQMRpZbhb1w",
-    user_agent ="crawler/scrapper")
+    if os.path.isfile('credentials.json'):
+        with open('credentials.json') as f:
+            data = json.load(f)
+            client_id = data['client_id']
+            client_secret = data['client_secret']
+            user_agent = data['user_agent']
+    else:
+        client_id = input('Please enter your client_id: ')
+        client_secret = input('Please enter your client_secret: ')
+        user_agent = input('Please enter your user_agent: ')
+        data = {}
+        data['client_id'] = client_id
+        data['client_secret'] = client_secret
+        data['user_agent'] = user_agent
+        with open('credentials.json', 'w') as outfile:
+            json.dump(data, outfile)
+
+    reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, user_agent=user_agent)
     
     init = input('\nHello, Welcome to r\'Crawler\n\nPlease select an NUMBER option\n TODO PUT MENU LIST HERE\n\n')
     tempList = []
