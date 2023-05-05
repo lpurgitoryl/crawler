@@ -49,22 +49,16 @@ def crawlBySubreddit(subreddit_name):
     posts = []
     subreddit = reddit.subreddit(subreddit_name)
     for post in subreddit.hot(limit=10):
-        # posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author, post.upvote_ratio, post.url])
         links = []
         for link in parseLinks(post.selftext):
             soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
             links.append({link : soup.title.string})
-        posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author.id, post.author.name, links])
-        # urls.append(post.upvote_ratio)
-        # urls.append(post.url)
-    #We also probably want author, upvote ratio, comments, and urls included in each post
-    # df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author'])
-    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author_id', 'author_name', 'links'])
+        posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author.id, post.author.name, post.upvote_ratio, links])
+    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author_id', 'author_name', 'upvote_ratio', 'links'])
     json_info = df.to_json(orient='records', indent=4)
     print(json_info)
     
-# Using the special variable 
-# __name__
+
 if __name__=="__main__":
 
     reddit = getCredential()
