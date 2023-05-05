@@ -1,0 +1,272 @@
+[
+    {
+        "title": "[D] Simple Questions Thread",
+        "score": 52,
+        "id": "12wcr8i",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/12wcr8i/d_simple_questions_thread/",
+        "num_comments": 148,
+        "body": "Please post your questions here instead of creating a new thread. Encourage others who create new posts for questions to post here instead!\n\nThread will stay alive until next one so keep posting after the date in the title.\n\nThanks to everyone for answering questions in the previous thread!",
+        "created": 1682262020.0
+    },
+    {
+        "title": "Reminder: Use the report button and read the rules!",
+        "score": 48,
+        "id": "120f4oy",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/120f4oy/reminder_use_the_report_button_and_read_the_rules/",
+        "num_comments": 0,
+        "body": "",
+        "created": 1679650349.0
+    },
+    {
+        "title": "[D] Google \"We Have No Moat, And Neither Does OpenAI\": Leaked Internal Google Document Claims Open Source AI Will Outcompete Google and OpenAI",
+        "score": 671,
+        "id": "137rxgw",
+        "url": "https://www.semianalysis.com/p/google-we-have-no-moat-and-neither",
+        "num_comments": 116,
+        "body": "",
+        "created": 1683216810.0
+    },
+    {
+        "title": "[R] Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes",
+        "score": 30,
+        "id": "1381gd3",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1381gd3/r_distilling_stepbystep_outperforming_larger/",
+        "num_comments": 8,
+        "body": "paper:  [\\[2305.02301\\] Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes (arxiv.org)](https://arxiv.org/abs/2305.02301) \n\nAbstract: \n\n> Deploying large language models (LLMs) is challenging because they are memory inefficient and compute-intensive for practical applications. In reaction, researchers train smaller task-specific models by either finetuning with human labels or distilling using LLM-generated labels. However, finetuning and distillation require large amounts of training data to achieve comparable performance to LLMs. We introduce Distilling step-by-step, a new mechanism that (a) trains smaller models that outperform LLMs, and (b) achieves so by leveraging less training data needed by finetuning or distillation. Our method extracts LLM rationales as additional supervision for small models within a multi-task training framework. We present three findings across 4 NLP benchmarks: First, compared to both finetuning and distillation, our mechanism achieves better performance with much fewer labeled/unlabeled training examples. Second, compared to LLMs, we achieve better performance using substantially smaller model sizes. Third, we reduce both the model size and the amount of data required to outperform LLMs; our 770M T5 model outperforms the 540B PaLM model using only 80% of available data on a benchmark task.",
+        "created": 1683237630.0
+    },
+    {
+        "title": "[R] Fully Autonomous Programming with Large Language Models",
+        "score": 27,
+        "id": "137odqz",
+        "url": "https://arxiv.org/abs/2304.10423",
+        "num_comments": 7,
+        "body": "",
+        "created": 1683212038.0
+    },
+    {
+        "title": "[Discussion]: Mark Zuckerberg on Meta's Strategy on Open Source and AI during the earnings call",
+        "score": 387,
+        "id": "1373nhq",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1373nhq/discussion_mark_zuckerberg_on_metas_strategy_on/",
+        "num_comments": 79,
+        "body": "During  the recent earnings call, Mark Zuckerberg answered a question from Eric  Sheridan of Goldman Sachs on Meta's AI strategy, opportunities to  integrate into products, and why they open source models and how it  would benefit their business.\n\nI found the reasoning to be very sound and promising for the OSS and AI community.\n\nThe  biggest risk from AI, in my opinion, is not the doomsday scenarios that  intuitively come to mind but rather that the most powerful AI systems  will only be accessible to the most powerful and resourceful  corporations.\n\nQuote copied from Ben Thompson's write up on Meta's earning in his [Stratechery blog post](https://stratechery.com/2023/facebook-earnings-generative-ai-and-messaging-monetization-open-source-and-ai/) which goes beyond AI. *It's behind a paywall but I highly recommend it personally.*\n\nSome noteworthy quotes that signal the thought process at Meta FAIR and more broadly\n\n* We\u2019re just playing a different game on the infrastructure  than companies like Google or Microsoft or Amazon\n* We would aspire to and hope to make even more open than that. So, we\u2019ll need to figure out a way to do that.\n* ...lead us to do more work in terms of open sourcing, some of the lower level models and tools\n* Open sourcing low level tools make the way we run all this infrastructure more efficient over time.\n* On  PyTorch: It\u2019s generally been very valuable for us to provide that  because now  all of the best developers across the industry are using  tools that  we\u2019re also using internally.\n* I would expect us to be pushing and helping  to build out an open ecosystem.\n\nFor  all the negative that comes out of the popular discourse on Meta, I  think their work to open source key tech tools over the last 10 years  has been exceptional, here's hoping it continues into this decade of AI  and pushes other tech giants to also realize the benefits of Open  Source.\n\nFull Transcript:\n\n>Right  now most of the companies that are training large language  models have  business models that lead them to a closed approach to development. I  think **there\u2019s an** **important opportunity to help create an  open ecosystem.**  If we can help be a part of this, then much of the  industry will  standardize on using these open tools and help improve  them further. So  this will make it easier for other companies to  integrate with our  products and platforms as we enable more  integrations, and that will  help our products stay at the leading edge  as well.  \nOur  approach to AI and our infrastructure has always been fairly  open. We  open source many of our state of the art models so people can   experiment and build with them. This quarter we released our LLaMa LLM   to researchers. It has 65 billion parameters but outperforms larger   models and has proven quite popular. We\u2019ve also open-sourced three other   groundbreaking visual models along with their training data and model   weights \u2014 Segment Anything, DinoV2, and our Animated Drawings tool \u2014  and  we\u2019ve gotten positive feedback on all of those as well.  \nI  think that there\u2019s an important distinction between the products we  offer and a lot of the technical infrastructure, especially the software  that we write to support that. And historically, whether it\u2019s the Open  Compute project that we\u2019ve done or just open sourcing a lot of the   infrastructure that we\u2019ve built, we\u2019ve historically open sourced a lot   of that infrastructure, even though we haven\u2019t open sourced the code for   our core products or anything like that.  \nAnd the reason why I think why we do this is that unlike some of  the other companies in the space, **we\u2019re not selling a cloud computing service** **where we try to keep the different software infrastructure that we\u2019re building proprietary.** For us, **it\u2019s way better if the industry  standardizes on the basic tools that we\u2019re using**  and therefore we can benefit from the improvements that others make and  others\u2019 use of those tools can, in some cases like Open Compute, **drive down the costs** of  those things which make our business more efficient too. So I think to  some degree **we\u2019re just playing a different game** on the infrastructure  than companies like Google or Microsoft or Amazon, and that creates different incentives for us.  \nSo overall, I think **that that\u2019s going to lead us to do more work in terms of open sourcing, some of the lower level models and tools**.  But of  course, a lot of the product work itself is going to be  specific and  integrated with the things that we do. So it\u2019s not that  everything we do is going to be open. Obviously, a bunch of this needs  to be developed in a way that creates unique value for our products, but  I think in  terms of the basic models, **I would expect us to be pushing and helping  to build out an open ecosystem** here, which I think is something that\u2019s  going to be important.  \nOn the AI tools, and we have a bunch of history here, right? So if you  if you look at what we\u2019ve done with **PyTorch**,  for example, which has  generally become the standard in the industry  as a tool that a lot of  folks who are building AI models and different  things in that space use,  **it\u2019s generally been very valuable** for us to provide that because now  all of the **best developers across the industry are using tools that  we\u2019re also using internally**.  So the tool chain is the same. So when they create some innovation, we  can easily integrate it into the things that we\u2019re doing. When we  improve something, it improves other products too. Because it\u2019s  integrated with our technology stack, when there are opportunities to  make integrations with products, it\u2019s much easier to  make sure that  developers and other folks are compatible with the things  that we need  in the way that our systems work.  \nSo there are a lot of advantages, but **I view this more as a kind of back end infrastructure advantage with potential integrations on the  product side**,  but one that should hopefully enable us to stay at the  leading edge  and integrate more broadly with the community and also make  the way we  run all this infrastructure more efficient over time. There  are a  number of models. I just gave PyTorch as an example. Open Compute  is  another model that has worked really well for us in this way, both to   incorporate both innovation and scale efficiency into our own   infrastructure.  \nSo I think that  there\u2019s, our incentives I think are basically  aligned towards moving in  this direction. Now that said, there\u2019s a lot  to figure out, right? So  when you asked if there are going to be other opportunities, I hope so. I  can\u2019t speak to what all those things might  be now. This is all quite  early in getting developed. **The better we do at the foundational work, the more opportunities** I think that will come and present themselves. So I think that that\u2019s all stuff that we need to  figure out. But at least **at the base level, I think we\u2019re generally incentivized to move in this direction**. And we also need to figure out  how to go in that direction over time.  \nI  mean, I mentioned LLaMA before and I also want to be clear that  while  I\u2019m talking about helping contribute to an open ecosystem, LLaMA  is a  model that we only really made available to researchers and there\u2019s  a  lot of really good stuff that\u2019s happening there. But a lot of the  work  that we\u2019re doing, I think, **we would aspire to and hope to make even more open than that. So, we\u2019ll need to figure out a way to do that.**",
+        "created": 1683157697.0
+    },
+    {
+        "title": "Prediction and Entropy of Printed English. Shannon 1951",
+        "score": 4,
+        "id": "137zz3j",
+        "url": "https://archive.org/details/bstj30-1-50",
+        "num_comments": 2,
+        "body": "This is a great and easily read paper. LLMs do the task described here really well. And I didn't realize how useful that could be.",
+        "created": 1683234359.0
+    },
+    {
+        "title": "[D] What tech stacks do you use when creating an LLM based app?",
+        "score": 2,
+        "id": "1386pjt",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1386pjt/d_what_tech_stacks_do_you_use_when_creating_an/",
+        "num_comments": 0,
+        "body": "Making apps based on foundational LLMs feels like it should have a tech stack \"pattern\" - a commonly used set of tools that most of the apps use unless there's a unique reason to deviate. \n\nWhat tech stacks do people here use?\n\nThe link below has some suggestions, but it would be great to know what people use in practice. Are these ones good?\n\n[https://gradientflow.com/building-llm-powered-apps-what-you-need-to-know/](https://gradientflow.com/building-llm-powered-apps-what-you-need-to-know/)",
+        "created": 1683250596.0
+    },
+    {
+        "title": "[D] A good book to learn probability behind ML",
+        "score": 1,
+        "id": "1389t20",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1389t20/d_a_good_book_to_learn_probability_behind_ml/",
+        "num_comments": 0,
+        "body": "Would people recommend Pattern Recognition and Machine Learning or Pattern Recognition and Machine Learning?",
+        "created": 1683258572.0
+    },
+    {
+        "title": "[D] Can biological neurons be properly emulated with current microcomputer hardware?",
+        "score": 0,
+        "id": "13890af",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/13890af/d_can_biological_neurons_be_properly_emulated/",
+        "num_comments": 1,
+        "body": "I've been doing some browsing on how neurons work and what follows is the conclusion I've come to.\n\nThe functionality of biological neurons is impossible to emulate with current microcomputing technology. This is because biological neurons have 2 important features that are expensive to imitate:\n\n1.\tIt is possible for any two biological neurons to connect. Since their cell body, along with their axons and dendrites, is able to move freely, two correlated neurons will eventually find and connect to each other if given enough time. The only way to mimic this behavior in a single-processor computer without sacrificing time is by making a fully connected graph of the neurons, which is awful because it requires n\\^2 space.\n\n2.\tEach neuron operates in parallel. This means increases in number of neurons only require more mass, which is much more freely available than the extra time that a single-processor computer would need to add the same number of neurons. For instance, the human brain has \\~86 billion neurons. Assuming a 1 GHz oscillator, and that each neuron only requires 1 cycle to calculate its value, a single-processor computer would still take a whole 8.6 seconds to calculate the state of the brain after 1 time step. The human brain runs the same time step in, well, much less time than that.\n\nSo basically, in order to emulate a brain, a single-processor computer would have to make some tradeoff between n\\^2 space and n time, neither of which can be afforded.\n\nThoughts?",
+        "created": 1683256415.0
+    },
+    {
+        "title": "r/arduino Monthly digest for 2023-03",
+        "score": 7,
+        "id": "12e1ti3",
+        "url": "https://www.reddit.com/r/arduino/comments/12e1ti3/rarduino_monthly_digest_for_202303/",
+        "num_comments": 2,
+        "body": "# r/arduino Monthly digest for 2023-03\n\n\n## Helping us to help you\n\nOver the past several weeks, we have been busy updating our [wiki](/r/arduino/wiki/index/).\n\nA specific area of focus has been to provide additional information about [how to post](/r/arduino/wiki/guides/how_to_post_quick_notes/).\nAdditionally there is a specific page about [how to post code and other text such as error messages](/r/arduino/wiki/guides/how_to_post_formatted_code/)\n\nWhy is this important? Because if you are seeking help you will be more likely to quickly get the help you are seeking if you include the important details\nin a form that makes it easier for people to help you.\n\nAs a reminder, photos, screenshots and videos of code are against the rules and usually make it much more difficult for people to help you.\n\n## 550K subscribers\n\nOn the 14th of December we reached 500,000 subscribers. Just 3 months later we reached 550,000 subscribers on about the 10th of March.\nIt's great to see so many new subscribers, some posting, some commenting, some lurking but all contributing in their own way.\n\n## Moderator team expansion\n\nAlso this month we have increased the moderator team by three.\n\nSo, a big welcome to u/pacmanic, u/the_3d6 and u/toebeanteddybears as our newest moderators.\nInitially they will help out with a few background tasks that will become more apparent over the upcoming weeks and months.\n\n\n## What can I make with this \"stuff\"?\n\nA commonly asked question is the \"what can I make with this stuff?\".\nSometimes, these questions receive cynical and unhelpful replies, which while understandable are not within the rules.\n\nAs a result, we thought it would be interesting to [ask ChatGPT](/r/arduino/wiki/guides/what_to_buy_guide/what_can_i_make_with_this_stuff/#wiki_what_can_i_do_with_this_.22stuff.22.3F).\nAs it turned out, ChatGPT gave a [pretty good reply](/r/arduino/wiki/guides/what_to_buy_guide/what_can_i_make_with_this_stuff/#wiki_the_chatgpt_reply). So, if you see a\n\"What can I make ...\" style question - which is a fair question - but are frustrated by the frequency of it being asked, perhaps refer\nthe OP to [our ChatGPT session transcript](/r/arduino/wiki/guides/what_to_buy_guide/what_can_i_make_with_this_stuff/#wiki_what_can_i_do_with_this_.22stuff.22.3F)\nand suggest that they ask ChatGPT using that transcript as a template.\n\n\n\n\n\nDon't forget to check out our [wiki](https://www.reddit.com/r/arduino/wiki/index/)\nfor up to date guides, FAQ, milestones, glossary and more.\n\nYou can find our [wiki](https://www.reddit.com/r/arduino/wiki/index/) at the top of the r/Arduino\nposts feed and in our \"tools/reference\" sidebar panel.\nThe sidebar also has a selection of links to additional useful information and tools.\n\n\n\n## Moderator's Choices\n\n|Title|Author|Score|Comments|\n|---|---|--:|--:|\n|[Made an arduino-powered bird drone that...](/r/arduino/comments/11xzos2/made_an_arduinopowered_bird_drone_that_well_poops/)|u/doctabu|3,243|156|\n|[Arduino passed the farm test. Takes a l...](/r/arduino/comments/126aop0/arduino_passed_the_farm_test_takes_a_lot_to_kill/)|u/austinr23|1,863|130|\n|[Fully Autonomous Water Depth Plotting D...](/r/arduino/comments/11llcqj/fully_autonomous_water_depth_plotting_drone/)|u/Bobthedude56|1,438|130|\n|[So i had this idea of a single analog p...](/r/arduino/comments/123ahhv/so_i_had_this_idea_of_a_single_analog_pin_single/)|u/conceptcreatormiui|1,319|74|\n|[Last update on the Chessboard before it...](/r/arduino/comments/11pdehq/last_update_on_the_chessboard_before_its/)|u/Bakedbananas|961|78|\n|[I had a great time designing and buildi...](/r/arduino/comments/11l5fo6/i_had_a_great_time_designing_and_building_this/)|u/ganacbicnio|599|32|\n|[My final project for my Arduino class, ...](/r/arduino/comments/11w5q1y/my_final_project_for_my_arduino_class_the/)|u/indigoHatter|276|22|\n|[Arduino resets after playing a chess al...](/r/arduino/comments/11kd0k6/arduino_resets_after_playing_a_chess_algo_for_a/)|u/sven2123|42|45|\n|[The new Arduino Uno](/r/arduino/comments/122f6vf/the_new_arduino_uno/)|u/mcattani|26|7|\n|[Update: Dad Needs Help](/r/arduino/comments/11q4u71/update_dad_needs_help/)|u/All-Cal|16|8|\n|[Hexapod Update 6 - Wire Management! (F...](/r/arduino/comments/11x830q/hexapod_update_6_wire_management_finally/)|u/Aecert|12|0|\n|[A driving system made with $20](/r/arduino/comments/1232b8q/a_driving_system_made_with_20/)|u/Shipy24|3|4|\n\n\n## Top Posts\n\n|Title|Author|Score|Comments|\n|---|---|--:|--:|\n|[Made an arduino-powered bird drone that...](/r/arduino/comments/11xzos2/made_an_arduinopowered_bird_drone_that_well_poops/)|u/doctabu|3,243|156|\n|[ISS Tracker Pedestal - constantly point...](/r/arduino/comments/11pxh3h/iss_tracker_pedestal_constantly_points_at_the/)|u/Contradius|3,016|91|\n|[i made a finish line sensor for our pin...](/r/arduino/comments/11verz3/i_made_a_finish_line_sensor_for_our_pinewood_derby/)|u/AvalancheJoseki|2,181|68|\n|[Arduino passed the farm test. Takes a l...](/r/arduino/comments/126aop0/arduino_passed_the_farm_test_takes_a_lot_to_kill/)|u/austinr23|1,863|130|\n|[Fully Autonomous Water Depth Plotting D...](/r/arduino/comments/11llcqj/fully_autonomous_water_depth_plotting_drone/)|u/Bobthedude56|1,438|130|\n|[So i had this idea of a single analog p...](/r/arduino/comments/123ahhv/so_i_had_this_idea_of_a_single_analog_pin_single/)|u/conceptcreatormiui|1,319|74|\n|[Working Deluminator with smartlife inte...](/r/arduino/comments/1251ik5/working_deluminator_with_smartlife_integration/)|u/FwieFabri|1,307|44|\n|[After hours of wiring, the chessboard i...](/r/arduino/comments/11iwv3o/after_hours_of_wiring_the_chessboard_is_finally/)|u/Bakedbananas|1,249|53|\n|[Making the best of a small space](/r/arduino/comments/11qotf0/making_the_best_of_a_small_space/)|u/_psylosin_|1,058|57|\n|[Experiment with making light seeking so...](/r/arduino/comments/11zshpn/experiment_with_making_light_seeking_solar_panels/)|u/j-stokke|1,004|48|\n\n\n## Look what I made posts\n\n|Title|Author|Score|Comments|\n|---|---|--:|--:|\n|[ISS Tracker Pedestal - constantly point...](/r/arduino/comments/11pxh3h/iss_tracker_pedestal_constantly_points_at_the/)|u/Contradius|3,016|91|\n|[Working Deluminator with smartlife inte...](/r/arduino/comments/1251ik5/working_deluminator_with_smartlife_integration/)|u/FwieFabri|1,307|44|\n|[Experiment with making light seeking so...](/r/arduino/comments/11zshpn/experiment_with_making_light_seeking_solar_panels/)|u/j-stokke|1,004|48|\n|[Subnautica-style aquarium automation ma...](/r/arduino/comments/11wg8yg/subnauticastyle_aquarium_automation_made_with/)|u/Dani0072009|860|42|\n|[I designed and built a mecanum wheel mo...](/r/arduino/comments/11f25jm/i_designed_and_built_a_mecanum_wheel_movement/)|u/Breadynator|806|42|\n|[Spent some time on the Chessboard aesth...](/r/arduino/comments/11osh5j/spent_some_time_on_the_chessboard_aesthetics_now/)|u/Bakedbananas|798|38|\n|[Charlieplexing LEDs in fabric using mac...](/r/arduino/comments/11e8j20/charlieplexing_leds_in_fabric_using_machine/)|u/00legendary|776|59|\n|[Three colour epaper display 880x528 ESP...](/r/arduino/comments/11yqy9d/three_colour_epaper_display_880x528_esp32/)|u/Chriserke|776|43|\n|[a invention that shows ram usage and sh...](/r/arduino/comments/11hb8dn/a_invention_that_shows_ram_usage_and_shows_it_on/)|u/matusaniu|520|52|\n|[First thing that does things](/r/arduino/comments/11nur57/first_thing_that_does_things/)|u/redtoast71|477|26|\n|[Little friend \ud83e\udd16](/r/arduino/comments/11qfbfe/little_friend/)|u/_hola_crayola_|408|32|\n|[I made this open source, affordable and...](/r/arduino/comments/11qx2il/i_made_this_open_source_affordable_and_accessible/)|u/scew344|154|36|\n|[An ATtiny85 watch with OLED display](/r/arduino/comments/11fx3m8/an_attiny85_watch_with_oled_display/)|u/CaptMidnight264|142|16|\n|[Made my first arduino project](/r/arduino/comments/12210y3/made_my_first_arduino_project/)|u/No-Nebula4187|138|8|\n|[Well another user going home with his A...](/r/arduino/comments/11p3hgi/well_another_user_going_home_with_his_artificial/)|u/joa4705|110|21|\n|[I hacked my Billy Bass](/r/arduino/comments/11orz9x/i_hacked_my_billy_bass/)|u/rayl8w|110|1|\n|[Chorded Keyboard/Macro-Pad](/r/arduino/comments/11nelkp/chorded_keyboardmacropad/)|u/nik282000|99|6|\n|[Testing vintage DRAM with a Nano](/r/arduino/comments/11zyipy/testing_vintage_dram_with_a_nano/)|u/TrevorMakes|97|15|\n|[I've made an IR remote for an old CD pl...](/r/arduino/comments/11uxi5s/ive_made_an_ir_remote_for_an_old_cd_player_using/)|u/Z4urce|90|13|\n|[Satisfying soldering](/r/arduino/comments/11qmnqd/satisfying_soldering/)|u/MrSirChris|86|21|\n|[I played a song on arduino!](/r/arduino/comments/124vo7h/i_played_a_song_on_arduino/)|u/PanConKisu|64|14|\n|[Relabeled the component drawer!](/r/arduino/comments/11pxcm7/relabeled_the_component_drawer/)|u/ScythaScytha|52|9|\n|[Creation of a new board](/r/arduino/comments/11p5wbl/creation_of_a_new_board/)|u/MrSirChris|49|9|\n|[8x8 multiplexed LED display for AP CSP ...](/r/arduino/comments/11ev8pn/8x8_multiplexed_led_display_for_ap_csp_class/)|u/enzodr|27|4|\n|[Using a Joystick, keyboard, voice, and ...](/r/arduino/comments/11yhw5r/using_a_joystick_keyboard_voice_and_webcam_to/)|u/Easy_Brilliant7668|26|1|\n|[I am developing a serial IO-expander li...](/r/arduino/comments/11v1drp/i_am_developing_a_serial_ioexpander_library_for/)|u/Sea_Success9195|26|2|\n|[I soldered and printed a back casing fo...](/r/arduino/comments/11r21wq/i_soldered_and_printed_a_back_casing_for_my/)|u/ScythaScytha|25|17|\n|[Saw someone build a waving robot a whil...](/r/arduino/comments/11qbuih/saw_someone_build_a_waving_robot_a_while_back_it/)|u/Opposite_Upstairs_66|24|3|\n|[sensor that insults my valorant teammat...](/r/arduino/comments/1221k4f/sensor_that_insults_my_valorant_teammates_when_we/)|u/heyim_blu|24|6|\n|[My very first project : a digicode for ...](/r/arduino/comments/126o31s/my_very_first_project_a_digicode_for_an_airsoft/)|u/PassengerInevitable9|22|10|\n|[Custom PCB Powered by Arduino Uno](/r/arduino/comments/11uw9c0/custom_pcb_powered_by_arduino_uno/)|u/rwardtech|18|5|\n|[Just got a little friend :&gt;](/r/arduino/comments/124o2b4/just_got_a_little_friend/)|u/MintedMince|15|7|\n|[First experiment with Arduino-controlle...](/r/arduino/comments/124yia0/first_experiment_with_arduinocontrolled_nixie/)|u/JohnSmallBerries|15|6|\n|[Atmospheric Condition Monitoring device.](/r/arduino/comments/11pcduh/atmospheric_condition_monitoring_device/)|u/above_average_9|11|4|\n|[Airgun electronic trainer with fsr and ...](/r/arduino/comments/11pkjii/airgun_electronic_trainer_with_fsr_and_solenoid/)|u/sfernan888|10|3|\n|[First Attempt at a Different Kind of He...](/r/arduino/comments/11lzqhh/first_attempt_at_a_different_kind_of_hexapod_leg/)|u/ripred3|9|0|\n|[A new update on outputting ANSI to the ...](/r/arduino/comments/11nsfqo/a_new_update_on_outputting_ansi_to_the_serial_port/)|u/ripred3|6|5|\n|[Repurposed wipes warmer for seed startin](/r/arduino/comments/11kmp7k/repurposed_wipes_warmer_for_seed_startin/)|u/oxnolucas|6|1|\n|[Just finished writing the code for a ra...](/r/arduino/comments/11ixfho/just_finished_writing_the_code_for_a_random/)|u/The_Battle_Cat|6|1|\n|[Crosspost of an Arduino based project I...](/r/arduino/comments/124etsv/crosspost_of_an_arduino_based_project_i_made_to/)|u/diezel_dave|6|3|\n|[Codebotics students from the Renaissanc...](/r/arduino/comments/11t0o4w/codebotics_students_from_the_renaissance_youth/)|u/CodeboticsRYC|6|0|\n|[Charlieplex Larson Scanner wiring](/r/arduino/comments/11p7526/charlieplex_larson_scanner_wiring/)|u/ranchergamer|5|0|\n|[Yet another demo of using fANSI library...](/r/arduino/comments/11o57tx/yet_another_demo_of_using_fansi_library_output/)|u/ripred3|5|2|\n|[POWER meter -Measuring Voltage, Current...](/r/arduino/comments/125f42h/power_meter_measuring_voltage_current_temperature/)|u/Volos2016|5|0|\n|[18-line Arduino mechanical TV with USB ...](/r/arduino/comments/11njc5g/18line_arduino_mechanical_tv_with_usb_feed/)|u/ArturPekosz|4|1|\n|[Arduino controlling Digital Signage scr...](/r/arduino/comments/124mth8/arduino_controlling_digital_signage_screen_via/)|u/mimac2|4|0|\n|[Finished Ice Breaker Replica with worki...](/r/arduino/comments/12094v8/finished_ice_breaker_replica_with_working_trigger/)|u/ZippyBlume|4|3|\n|[Creating a Machine Leaning Workflow for...](/r/arduino/comments/11eypl7/creating_a_machine_leaning_workflow_for_arduino/)|u/Kooky_Impression9575|3|1|\n|[Arduino/Teensy Powered RFID Encoder](/r/arduino/comments/124ufzq/arduinoteensy_powered_rfid_encoder/)|u/GoToTags|3|0|\n|[I've been working on designing an Ardui...](/r/arduino/comments/11r1kxy/ive_been_working_on_designing_an_arduino_based/)|u/careyi4|2|1|\n|[Building the worlds jankiest serial to ...](/r/arduino/comments/11gwffj/building_the_worlds_jankiest_serial_to_usb_cable/)|u/FrancisStokes|2|0|\n|[We're building an open-source arduino-b...](/r/arduino/comments/11vxzb9/were_building_an_opensource_arduinobased/)|u/Vosentech_Official|2|5|\n|[mbparser is a simple but modern C++ lib...](/r/arduino/comments/11ogwq7/mbparser_is_a_simple_but_modern_c_library_to/)|u/drooltheghost|1|4|\n|[Connecting a wireless gamepad to Arduin...](/r/arduino/comments/1205cgu/connecting_a_wireless_gamepad_to_arduino/)|u/Kooky_Impression9575|1|0|\n|[The Codebotics class at the Renaissance...](/r/arduino/comments/11xjjh0/the_codebotics_class_at_the_renaissance_youth/)|u/CodeboticsRYC|1|0|\n|[microwave vision project using nrf24l01...](/r/arduino/comments/11nf4r0/microwave_vision_project_using_nrf24l01_array/)|u/departedmessenger|0|0|\n|[Here's my DIY e-nail project so far](/r/arduino/comments/11mexnl/heres_my_diy_enail_project_so_far/)|u/orange_couch|0|6|\n|[MyDigitalSlot Racing System Explained.....](/r/arduino/comments/11lxm0h/mydigitalslot_racing_system_explained_are_you/)|u/dlb5|0|0|\n|[Open-source UAV firmware idea (need rev...](/r/arduino/comments/11iuzak/opensource_uav_firmware_idea_need_review/)|u/Unlucky-Judgment8742|0|0|\n|[I posted a while ago about implementing...](/r/arduino/comments/123otap/i_posted_a_while_ago_about_implementing_a_pid/)|u/careyi4|0|1|\n\nTotal: 60 posts\n\n\n\n## Summary of Post types:\n\n|Flair|Count|\n|---|--:|\n|Beginner's Project|27|\n|Beginner's Project, Hardware/Software Help|1|\n|ChatGPT|19|\n|Games|5|\n|Hardware &amp; Software Help|1|\n|Hardware Help|223|\n|Libraries|1|\n|Look What They Made!|1|\n|Look what I found!|1|\n|Look what I made!|60|\n|Mega|3|\n|Meta Post|1|\n|Mod's Choice!|12|\n|Nano|4|\n|Potentially Dangerous Project|2|\n|Pro Micro|1|\n|Project of the Month Entry|3|\n|School Project|44|\n|School Project Help|1|\n|Software Help|1|\n|Solved|26|\n|Uno|21|\n|no flair|540|\n\n\nTotal: 1170 posts in 2023-03",
+        "created": 1680823432.0
+    },
+    {
+        "title": "Esp32-iLi9341 Vader's Tie Hud",
+        "score": 384,
+        "id": "137jbf8",
+        "url": "https://v.redd.it/nvw4ai1n6txa1",
+        "num_comments": 11,
+        "body": "",
+        "created": 1683203750.0
+    },
+    {
+        "title": "My first project!",
+        "score": 181,
+        "id": "137ekzs",
+        "url": "https://v.redd.it/yw98nut7jtxa1",
+        "num_comments": 16,
+        "body": "Hello, i just bought my first arduino starter kit, i tought i might share my fisrt project with you guys.",
+        "created": 1683189721.0
+    },
+    {
+        "title": "Most upvotted song will be played by this speaker. (this is for a house im making in technology class)",
+        "score": 14,
+        "id": "137w25n",
+        "url": "https://v.redd.it/ss6c8l5tzuxa1",
+        "num_comments": 11,
+        "body": "",
+        "created": 1683225832.0
+    },
+    {
+        "title": "Help with arduino Nano 33 and ws2811 led",
+        "score": 4,
+        "id": "137zoik",
+        "url": "https://www.reddit.com/r/arduino/comments/137zoik/help_with_arduino_nano_33_and_ws2811_led/",
+        "num_comments": 1,
+        "body": "Hi there!\n\nBeen struggling on a my first Arduino project.\n\nBasically I have a controller that is supposed to light up specific LEDs on a strip.\n\nMy current issue is that the LEDs do not light up, or in some cases, just the first one does.\n\n&#x200B;\n\nI have attached a diagram of my current wiring setup  \n\n\n[Diagram](https://preview.redd.it/8ie0b43qmvxa1.png?width=1362&format=png&auto=webp&v=enabled&s=6f9db9199e98b1355a5845320a0e6603f87bc1fc)\n\nI am using:  \n\n\n* Nano 33 Sense Rev2 BLE\n* 5V WS2811 LEDs (200 of them)\n* Power supply is meanwell lpv-60-5\n* The NeoPixelBus library\n* Link to specific codebase I am using for this build [https://github.com/FabianRig/ArduinoMoonBoardLED](https://github.com/FabianRig/ArduinoMoonBoardLED)  \n\n\nBehaviour I am seeing:\n\n* Most of the time, nothing lights up after connecting and specifying lights to light up.\n* Oddly enough, sometimes the first LED will pop on if I mess with the ground or data pin. Colour is not always consistent. I can't 100% reliably make this happen every time\n\nThings I have tested\n\n* I bought a little strand tester online. It lights up all strings. Wanted to rule out the LEDs as the issue\n* Checked voltage at end of the LED lines - and looks good at 5v\n* Tried changing data pin in code and wiring to see if that helped at all\n\n&#x200B;\n\nI am a bit lost on what to look into next. Hoping someone wiser than me knows what I am doing wrong.\n\n&#x200B;\n\nA couple spitball ideas I had worth looking into maybe\n\n* I have seen some people mention that it could be a good idea to add a resister in data line to clean up signal a bit. Got one of those on order and waiting for it to show up\n* I also stumbled across some reading that perhaps the data line from the arduino is not 5v in my setup, and it may need to be? And I may need to add something in line there to pump from 3.3 to 5v. A bit over my head",
+        "created": 1683233724.0
+    },
+    {
+        "title": "Arduino to TI LaunchXL-F28069M Communication",
+        "score": 2,
+        "id": "13859qp",
+        "url": "https://www.reddit.com/r/arduino/comments/13859qp/arduino_to_ti_launchxlf28069m_communication/",
+        "num_comments": 5,
+        "body": "I have a project where I need to communicate between an Arduino UNO and a TI LaunchPadXL board. I have scoured the internet looking for a guide but only come up with vague info regarding I2C. I\u2019m wondering if anyone else has done something similar and/or can give me some advice about it. Thanks.",
+        "created": 1683246755.0
+    },
+    {
+        "title": "Stepper Motor Wiring Help Needed",
+        "score": 1,
+        "id": "138a2ns",
+        "url": "https://www.reddit.com/gallery/138a2ns",
+        "num_comments": 0,
+        "body": "",
+        "created": 1683259306.0
+    },
+    {
+        "title": "Free rechargeable project batteries",
+        "score": 111,
+        "id": "1376uze",
+        "url": "https://www.reddit.com/gallery/1376uze",
+        "num_comments": 25,
+        "body": "Discarded, undamaged Vapes are a great source of free 3.7V rechargeable 18350 LiPo batteries.  I\u2019ve been using them successfully with 03962A Charger boards to power a variety of Arduino projects.  Even built a couple of 5V power banks by adding a boost converter.  No issues so far, but if you don\u2019t trust Vape batteries, then just DON\u2019T USE THEM.\n\nWarning: Don\u2019t use the 03962A board to charge a battery with less than 1000mAh, unless you swap out R3 with a higher value resistor.\n\nLike always, follow safe LiPo charging practices, especially when using recycled batteries.",
+        "created": 1683166252.0
+    },
+    {
+        "title": "What are these pins?",
+        "score": 82,
+        "id": "13785t0",
+        "url": "https://i.redd.it/odborv8ivrxa1.jpg",
+        "num_comments": 52,
+        "body": "",
+        "created": 1683169639.0
+    },
+    {
+        "title": "Anyone have a current / voltage sensor circuit I can copy?",
+        "score": 2,
+        "id": "1382h0i",
+        "url": "https://www.reddit.com/r/arduino/comments/1382h0i/anyone_have_a_current_voltage_sensor_circuit_i/",
+        "num_comments": 2,
+        "body": "I need to measure 0 to 7 amps at 3 to 9 volts with about millivolt precision. None of the available i2c boards do it and I'm a total noob at building circuits. I might have a solution with three separate sensors but bleh, that's a lot of wiring. Heck I'd even tip if someone has a solution that works with i2c.",
+        "created": 1683239947.0
+    },
+    {
+        "title": "Star Wars Jedi: Survivor- Discussion Mega Thread!",
+        "score": 340,
+        "id": "131uojg",
+        "url": "https://www.reddit.com/r/StarWars/comments/131uojg/star_wars_jedi_survivor_discussion_mega_thread/",
+        "num_comments": 613,
+        "body": "**SPOILER POLICY**\n\n**All season 3 spoilers must be tagged until 14 days after the season finale.**\n\nBe sure to check out the 'Star Wars: Survivor & Fallen Order' subreddit - r/FallenOrder\n\n**Official** [**r/StarWars**](https://new.reddit.com/r/StarWars/) **Discord server** \\- [discord.gg/StarWars](https://discord.gg/StarWars)\n\n**Star Wars Television Discord server** \\- [discord.gg/SWTV](https://discord.gg/SWTV)",
+        "created": 1682693080.0
+    },
+    {
+        "title": "Star Wars Visions Season 2 Discussion Thread",
+        "score": 259,
+        "id": "13739e5",
+        "url": "https://www.reddit.com/r/StarWars/comments/13739e5/star_wars_visions_season_2_discussion_thread/",
+        "num_comments": 462,
+        "body": "Welcome to the discussion thread thread for season 2 of Visions.  This thread is for all episodes, as they are releasing all at once.  \n\n&#x200B;\n\nThese episodes can be talked about freely in this thread.  \n\nAll Visions S2 discussion needs to be in this thread until 12am ET on 5/5/23.  \n\nAfter that, and per [the subreddit rules](https://www.reddit.com/r/StarWars/wiki/spoilerpolicy), any imagery and discussion outside of this thread needs to be spoiler protected for the next 13 days.",
+        "created": 1683156677.0
+    },
+    {
+        "title": "Shared by Billie Lourde on Instagram (from today\u2019s honoring of Carrie Fisher on the Hollywood Walk of Fame)",
+        "score": 1796,
+        "id": "1381ixb",
+        "url": "https://www.reddit.com/gallery/1381ixb",
+        "num_comments": 50,
+        "body": "",
+        "created": 1683237778.0
+    },
+    {
+        "title": "I am really interested to see the lead up to last three episodes.",
+        "score": 8289,
+        "id": "137njnh",
+        "url": "https://i.redd.it/f6xxebkbbvxa1.jpg",
+        "num_comments": 370,
+        "body": "",
+        "created": 1683211278.0
+    },
+    {
+        "title": "May the 4th Be With You! My poster tribute to Star Wars Day",
+        "score": 18090,
+        "id": "137gnrh",
+        "url": "https://i.redd.it/rsypf6c4jsxa1.jpg",
+        "num_comments": 222,
+        "body": "",
+        "created": 1683196362.0
+    },
+    {
+        "title": "I'd like to use today to tribute to the late Grant Imahara, who worked on two films, spent more than an hour at a con signing autographs (for free), and who built an animatronic Baby Yoda for sick kids. RIP, you legend.",
+        "score": 1048,
+        "id": "1380yzk",
+        "url": "https://i.redd.it/uvn1mvoswvxa1.jpg",
+        "num_comments": 18,
+        "body": "",
+        "created": 1683236553.0
+    },
+    {
+        "title": "Happy May the 4th!",
+        "score": 731,
+        "id": "13840lp",
+        "url": "https://v.redd.it/w3vt5boxhwxa1",
+        "num_comments": 54,
+        "body": "",
+        "created": 1683243633.0
+    },
+    {
+        "title": "May the Fourth Be With You... on steel drum!",
+        "score": 559,
+        "id": "1385di6",
+        "url": "https://v.redd.it/0fw73wvsrwxa1",
+        "num_comments": 16,
+        "body": "",
+        "created": 1683247037.0
+    },
+    {
+        "title": "What is your favorite spacecraft in Star Wars?",
+        "score": 771,
+        "id": "1382oot",
+        "url": "https://i.imgur.com/j5bUXYx.jpg",
+        "num_comments": 312,
+        "body": "I'll go first. Luthen's Fondor Haulcraft. Just finished up Andor and the scenes where he used the ship had me giggling like Ron Swanson looking at a meat tornado. Not only is it a nice looking ship but he has it kitted out very nicely. \n\nAs someone who plays Elite Dangerous his setup had me wanting to play and I was a little jealous of some of its features.",
+        "created": 1683240451.0
+    },
+    {
+        "title": "Sarlacc Pit Cake for our May the 4th Dessert!",
+        "score": 930,
+        "id": "137yt30",
+        "url": "https://i.redd.it/xebi1x5g0xxa1.jpg",
+        "num_comments": 24,
+        "body": "",
+        "created": 1683231837.0
+    }
+]
