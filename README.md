@@ -3,7 +3,8 @@
 CS172 Crawler Project  
 Team Memembers:  
 Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)  
-Miguelangel Tinoco [@Tinoco451](https://github.com/Tinoco451)
+Miguelangel Tinoco [@Tinoco451](https://github.com/Tinoco451)  
+Tangyuan Liang [@akasakakona](https://github.com/akasakakona)  
 
 ## Setting Up The Environment
 
@@ -17,4 +18,6 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 `conda env create -f environment.yml` in project directory
 
 4) Activate `crawler` environment with
-`activate crawler` in project directory
+`conda activate crawler` in project directory
+
+5) When done, deactivate the environment with `conda deactivate`
