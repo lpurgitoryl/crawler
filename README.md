@@ -20,4 +20,6 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 4) Activate `crawler` environment with
 `conda activate crawler` in project directory
 
-5) When done, deactivate the environment with `conda deactivate`
+5) Run `python3 main.py` on Linux/MacOS or `python main.py` on Windows to start the crawler. Enter your credentials when prompted.
+
+6) When done, deactivate the environment with `conda deactivate`
