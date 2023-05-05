@@ -17,8 +17,7 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 3) Create `crawler` environment with all necessary libraries for this project using
 `conda env create -f environment.yml` in project directory
 
-4) Activate `crawler` environment with
-`conda activate crawler` in project directory
+4) Activate `crawler` environment with `conda activate crawler` in project directory
 
 5) Run `python3 main.py` on Linux/MacOS or `python main.py` on Windows to start the crawler. Enter your credentials when prompted.
 
