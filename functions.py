@@ -108,17 +108,17 @@ def making_dir_and_file(data="", file_num=0 ,flag=0, exit=0): # makes dir and fi
     
         
     with open("crawled_data/user_search_"+ str_num +".json", "a") as outfile:
-                    print("\nwriting this to file\n")
-                    print(data)
+                    # print("\nwriting this to file\n")
+                    # print(data)
                     if exit ==1 :
                         data+="]"
                     outfile.write(data)
                     outfile.close()
 
-
+    # TODO: IF FILE SIZE REACHED LIMIT, INCREASE FILE NUM AND RUN LINES 89-98
     return flag,file_num
     
-
+# TODO: FILE SIZE CHECKER, GENERATING THE RANDOM REDDITS AND SEARCHING THEM, SEARCHING REDDIT USERS, PARSING MARKDOWN
 # Using the special variable 
 # __name__
 if __name__=="__main__":
@@ -139,7 +139,7 @@ if __name__=="__main__":
             case '1':
                 output = selected_subReddit()
                 print("\noutput\n")
-                print(output)
+                # print(output)
                 if output != 0:
                       flag,file_num = making_dir_and_file(data=output, file_num=file_num,flag=flag)
                 else: # error msg here

@@ -17,3 +17,4 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 
 4) Activate `crawler` environment with
 `activate crawler` in project directory
+5) run `crawler.bat` file in the directory of the project
