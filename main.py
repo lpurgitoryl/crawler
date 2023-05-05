@@ -1,8 +1,10 @@
 import praw
-import pandas as pd
 import os
 import json
 import re
+import requests
+import bs4
+import pandas as pd
 
 def getCredential():
     if os.path.isfile('credentials.json'):
@@ -45,12 +47,19 @@ def parseLinks(md):
 
 def crawlBySubreddit(subreddit_name):
     posts = []
-    urls = []
     subreddit = reddit.subreddit(subreddit_name)
     for post in subreddit.hot(limit=10):
-        posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
+        # posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author, post.upvote_ratio, post.url])
+        links = []
+        for link in parseLinks(post.selftext):
+            soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
+            links.append({link : soup.title.string})
+        posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author.id, post.author.name, links])
+        # urls.append(post.upvote_ratio)
+        # urls.append(post.url)
     #We also probably want author, upvote ratio, comments, and urls included in each post
-    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author', 'upvote_ratio', 'comments', 'urls'])
+    # df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author'])
+    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author_id', 'author_name', 'links'])
     json_info = df.to_json(orient='records', indent=4)
     print(json_info)
     
