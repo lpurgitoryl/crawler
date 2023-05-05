@@ -30,7 +30,7 @@ def selected_subreddit_parameters(subreddit_name,limit): # returns comment fores
     # TODO Be able to assign a limit
     menu = "Please enter an option\n\nEnter NEW to search for NEW catagory\n\nEnter HOT to search for HOT catagory\n\nEnter TOP to search for TOP catagory\n\nEnter RISING to search for RISING catagory\nan invalid key will default...it will be top catagory with limit of 600\n"
     user_input = input(menu)
-    limit = 1
+    # limit = 1
     if limit >= 1000:
         limit = 999
     json_info = ""
@@ -85,18 +85,16 @@ def enter_function_name_here():
     return '{"someKeyHere": "somePairHere}'
 
 def making_dir_and_file(data="", file_num=0 ,flag=0, exit=0): # makes dir and file, checks if file size is less than 10mb
-    str_num = str(file_num)
 
     if not os.path.exists('crawled_data'):
         os.makedirs('crawled_data')
-        with open("crawled_data/user_search_"+ str_num +".json", "w") as outfile:
+        with open("crawled_data/user_search_"+ str(file_num) +".json", "w") as outfile:
             outfile.write('[')
             outfile.close()
-    elif not os.path.exists("crawled_data/user_search_"+ str_num +".json"):
-        with open("crawled_data/user_search_"+ str_num +".json", "w") as outfile:
+    elif not os.path.exists("crawled_data/user_search_"+ str(file_num) +".json"):
+        with open("crawled_data/user_search_"+ str(file_num) +".json", "w") as outfile:
             outfile.write('[')
             outfile.close()
-        
             
     # TODO check for size, rn checks for delimiters
     # if flag != 0 and exit ==0 : # if zero needs deliminter
@@ -104,16 +102,33 @@ def making_dir_and_file(data="", file_num=0 ,flag=0, exit=0): # makes dir and fi
     if flag !=0 and exit== 0:
         temp += '\n,' 
     flag = 1
-    data = temp + data
     
+    data = temp + data
+    data_byte_size = len(data.encode('utf-8'))
+    curr_file_size = os.stat("crawled_data/user_search_"+ str(file_num) +".json").st_size
+    upper_byte_size_limit = 2000000 #2MB
+    
+    # check if data will make file go over limit.
+    # if over limit, close curr file with ending bracket, increase file number, create new file add bracket
+    if (  data_byte_size + curr_file_size ) > (upper_byte_size_limit) :
+        with open("crawled_data/user_search_"+ str(file_num) +".json", "a") as outfile:
+            data+="]"
+            outfile.write(data)
+            outfile.close()
+        file_num +=1
+        with open("crawled_data/user_search_"+ str(file_num) +".json", "w") as outfile:
+            outfile.write('[')
+            outfile.close()
         
-    with open("crawled_data/user_search_"+ str_num +".json", "a") as outfile:
-                    # print("\nwriting this to file\n")
-                    # print(data)
-                    if exit ==1 :
-                        data+="]"
-                    outfile.write(data)
-                    outfile.close()
+    # append data to file
+    with open("crawled_data/user_search_"+ str(file_num) +".json", "a") as outfile:
+        # print("\nwriting this to file\n")
+        # print(data)
+        
+        if exit ==1 :
+            data+="]"
+        outfile.write(data)
+        outfile.close()
 
     # TODO: IF FILE SIZE REACHED LIMIT, INCREASE FILE NUM AND RUN LINES 89-98
     return flag,file_num
