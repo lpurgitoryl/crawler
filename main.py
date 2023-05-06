@@ -174,23 +174,10 @@ def parseLinks(md):
     for _, link in INLINE_LINK_RE.findall(md) + FOOTNOTE_LINK_URL_RE.findall(md):
         if IS_LINK_RE.match(link):
             soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
-            links.append(link)
+            if soup.title is not None:
+                links.append({link : soup.title.string})
 
     return links
-
-
-def crawlBySubreddit(subreddit_name):
-    posts = []
-    subreddit = reddit.subreddit(subreddit_name)
-    for post in subreddit.hot(limit=10):
-        links = []
-        for link in parseLinks(post.selftext):
-            soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
-            links.append({link : soup.title.string})
-        posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, post.author.id, post.author.name, post.upvote_ratio, links])
-    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'author_id', 'author_name', 'upvote_ratio', 'links'])
-    json_info = df.to_json(orient='records', indent=4)
-    print(json_info)
     
 
 if __name__=="__main__":
