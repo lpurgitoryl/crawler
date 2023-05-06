@@ -5,6 +5,7 @@ Team Memembers:
 Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)  
 Miguelangel Tinoco [@Tinoco451](https://github.com/Tinoco451)  
 Tangyuan Liang [@akasakakona](https://github.com/akasakakona)  
+Nardin Anwar [@nanwa003](https://github.com/nanwa003)
 
 ## Setting Up The Environment
 
