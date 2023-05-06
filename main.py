@@ -137,11 +137,28 @@ def making_dir_and_file(data="", file_num=0 ,flag=0, exit=0): # makes dir and fi
 # Using the special variable 
 # __name__
 if __name__=="__main__":
+    if os.path.isfile('credentials.json'):
+        with open('credentials.json') as f:
+            data = json.load(f)
+            client_id = data['client_id']
+            client_secret = data['client_secret']
+            user_agent = data['user_agent']
+    else:
+        client_id = input('Please enter your client_id: ')
+        client_secret = input('Please enter your client_secret: ')
+        user_agent = input('Please enter your user_agent: ')
+        data = {}
+        data['client_id'] = client_id
+        data['client_secret'] = client_secret
+        data['user_agent'] = user_agent
+        with open('credentials.json', 'w') as outfile:
+            json.dump(data, outfile)
     
-    reddit = praw.Reddit(client_id="3IS_PPpIX3IkVIh-1f8cHQ",
-    client_secret="AvAKHMywUgLyGlVSVD0bQMRpZbhb1w",
-    user_agent ="crawler/scrapper")
+    # reddit = praw.Reddit(client_id="3IS_PPpIX3IkVIh-1f8cHQ",
+    # client_secret="AvAKHMywUgLyGlVSVD0bQMRpZbhb1w",
+    # user_agent ="crawler/scrapper")
     
+    reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, user_agent=user_agent)
     
     menu = '''\nHello, Welcome to r\'Crawler\n\nPlease select an NUMBER option\n\nEnter 1 to search for a specfic subredit\nEnter 2 to search for a reddit user\nEnter "exit" to terminate program\n'''
     init = input(menu)
