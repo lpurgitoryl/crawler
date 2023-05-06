@@ -1,3 +1,3 @@
 call activate crawler
-python functions.py
+python main.py
 call conda deactivate
