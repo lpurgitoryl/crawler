@@ -1,7 +1,6 @@
 # Reddit Crawler
-
 CS172 Crawler Project  
-Team Memembers:  
+Team Members:  
 Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)  
 Miguelangel Tinoco [@Tinoco451](https://github.com/Tinoco451)  
 Tangyuan Liang [@akasakakona](https://github.com/akasakakona)  
