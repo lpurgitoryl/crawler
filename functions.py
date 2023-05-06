@@ -3,7 +3,9 @@ import pandas as pd
 import json
 import os
 import pprint
-
+import bs4
+import requests
+import re
 
 
 def selected_subReddit():
@@ -38,44 +40,68 @@ def selected_subreddit_parameters(subreddit_name,limit): # returns comment fores
         match user_input.upper():
             case 'HOT':
                 for post in subreddit_name.hot(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case 'NEW':
                 for post in subreddit_name.new(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
 
             case 'TOP':
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case 'RISING':
                 for post in subreddit_name.rising(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case "\n":
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case _:
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
 
     return json_info
-    
+
+def parseLinks(md):
+    """ Return dict of links in markdown """
+    INLINE_LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+    FOOTNOTE_LINK_URL_RE = re.compile(r'\[(\d+)\]:\s+(\S+)')
+    IS_LINK_RE = re.compile(
+        r'^(?:http|ftp)s?://' # http:// or https://
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
+        r'localhost|' #localhost...
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
+        r'(?::\d+)?' # optional port
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+    links = []
+
+    for _, link in INLINE_LINK_RE.findall(md) + FOOTNOTE_LINK_URL_RE.findall(md):
+        if IS_LINK_RE.match(link):
+            links.append(link)
+
+    return links    
 
 def random_subreddits(): # find random subreddits based on params and add to file
     return '{"someKeyHere": "somePairHere}'
