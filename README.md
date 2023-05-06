@@ -5,6 +5,7 @@ Team Memembers:
 Nicole Garcia [@lpurgitoryl](https://github.com/lpurgitoryl)  
 Miguelangel Tinoco [@Tinoco451](https://github.com/Tinoco451)  
 Tangyuan Liang [@akasakakona](https://github.com/akasakakona)  
+Nardin Anwar [@nanwa003](https://github.com/nanwa003)
 
 ## Setting Up The Environment
 
@@ -14,8 +15,7 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 
 2) Install [miniconda(Python3)](https://conda.io/miniconda.html) on your computer
 
-3) Create `crawler` environment with all necessary libraries for this project using
-`conda env create -f environment.yml` in project directory
+3) Create `crawler` environment with all necessary libraries for this project using `conda env create -f environment.yml` in project directory
 
 4) Activate `crawler` environment with `conda activate crawler` in project directory
 
