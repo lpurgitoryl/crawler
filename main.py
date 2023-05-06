@@ -28,7 +28,7 @@ def selected_subRedditNameChecker(subreddit_name): #checks if user inputted name
 def selected_subreddit_parameters(subreddit_name,limit): # returns comment forest , selects the catagory type to search ex. new, hot , rising, or top with limits... default will be NEW with a limit of _____
     posts = []
     # TODO Be able to assign a limit
-    menu = "Please enter an option\n\nEnter NEW to search for NEW catagory\n\nEnter HOT to search for HOT catagory\n\nEnter TOP to search for TOP catagory\n\nEnter RISING to search for RISING catagory\nan invalid key will default...it will be top catagory with limit of 600\n"
+    menu = "Please enter an option\n\nEnter NEW to search for NEW category\n\nEnter HOT to search for HOT category\n\nEnter TOP to search for TOP category\n\nEnter RISING to search for RISING category\nan invalid key will default...it will be top category with limit of 600\n"
     user_input = input(menu)
     # limit = 1
     if limit >= 1000:
@@ -38,44 +38,49 @@ def selected_subreddit_parameters(subreddit_name,limit): # returns comment fores
         match user_input.upper():
             case 'HOT':
                 for post in subreddit_name.hot(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case 'NEW':
                 for post in subreddit_name.new(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
 
             case 'TOP':
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case 'RISING':
                 for post in subreddit_name.rising(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case "\n":
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
             case _:
                 for post in subreddit_name.top(limit=limit):
-                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created])
-                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created'])
+                    links = parseLinks(post.selftext)
+                    posts.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links])
+                    df = pd.DataFrame(posts, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links'])
                     json_info = df.to_json(orient='records', indent=4)
                 user_input = 0
 
     return json_info
-    
 
 def random_subreddits(): # find random subreddits based on params and add to file
     return '{"someKeyHere": "somePairHere}'
@@ -168,6 +173,7 @@ def parseLinks(md):
 
     for _, link in INLINE_LINK_RE.findall(md) + FOOTNOTE_LINK_URL_RE.findall(md):
         if IS_LINK_RE.match(link):
+            soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
             links.append(link)
 
     return links
@@ -192,7 +198,7 @@ if __name__=="__main__":
     reddit = getCredential()
 
     
-    menu = '''\nHello, Welcome to r\'Crawler\n\nPlease select an NUMBER option\n\nEnter 1 to search for a specfic subredit\nEnter 2 to search for a reddit user\nEnter "exit" to terminate program\n'''
+    menu = '''\nHello, Welcome to r\'Crawler\n\nPlease select an NUMBER option\n\nEnter 1 to search for a specfic subredit\nEnter "exit" to terminate program\n'''
     init = input(menu)
     flag = 0 # zero when an extra ',' is not needed else if another option selected set to 1 to add delimiter
     file_num=0
@@ -251,7 +257,7 @@ if __name__=="__main__":
             case 'exit':
                 print("EXITING FILE")
                 flag,file_num = making_dir_and_file(flag=flag, file_num=file_num,exit=1)
-                print("bye")
+                print("Thank you for using rCrawler!")
                 init = 0
             case _:
                 print("default case statement")
