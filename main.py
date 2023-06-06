@@ -31,7 +31,10 @@ def dumpJson(posts):
     for post in posts:
         links = parseLinks(post.selftext)
         for comment in post.comments:
-            comments.append(comment.body)
+            try:
+                comments.append(comment.body)
+            except:
+                comments.append("")
         data.append([post.title, post.score, post.id, post.url, post.num_comments, post.selftext, post.created, links, comments])
     df = pd.DataFrame(data, columns=['title', 'score', 'id', 'url', 'num_comments', 'body', 'created', 'links', 'comments'])
     return df.to_json(orient='records', indent=4)
@@ -160,9 +163,12 @@ def parseLinks(md):
 
     for _, link in INLINE_LINK_RE.findall(md) + FOOTNOTE_LINK_URL_RE.findall(md):
         if IS_LINK_RE.match(link):
-            soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
-            if soup.title is not None:
-                links.append({link : soup.title.string})
+            try:
+                soup = bs4.BeautifulSoup(requests.get(link).content, 'html.parser')
+                if soup.title is not None:
+                    links.append({link : soup.title.string})
+            except:
+                pass
 
     return links
     
