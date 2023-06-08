@@ -4,6 +4,7 @@ dependencies:
     - ipykernel
     - jupyter
     - pandas
+    - flask
     - pip
     - pip:
         - praw

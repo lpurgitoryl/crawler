@@ -18,4 +18,4 @@ More info on managing conda envirnoments can be found [here](https://conda.io/pr
 3) Create `crawler` environment with all necessary libraries for this project using
 `conda env create -f environment.yml` in project directory
 
-4) run `crawler.bat` file in the directory of the project
+4) run `crawler.bat` file in the directory of the project inside either directory `partA_terminal_crawler` or `partB_webUI`
