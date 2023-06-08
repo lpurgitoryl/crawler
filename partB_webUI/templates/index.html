@@ -65,10 +65,15 @@
     }
     .childTableRow {
         display: none;
+        border-radius: 25px;
+        border: 2px solid #D3D3D3;
+        background-color: #D3D3D3;
     }
     .childTableRow table {
         border: 2px solid #555;
     }
+
+
     </style>
 
 <div class="wrapper">
@@ -79,7 +84,7 @@
     </header>
     <div class="container">
     <p class="alert alert-success">Shows when sm happens</p>
-  <table class="table">
+  <table class="table" id="myTable">
       <thead>
           <tr>
               <th></th>
@@ -87,94 +92,8 @@
               <th>Score</th>
           </tr>
       </thead>
-      <tr>
-          <td><span class="expandChildTable"></span></td>
-          <td>Fred Smith</td>
-          <td>01102299393</td>
-      </tr>
-      <tr class="childTableRow">
-          <td colspan="3">
-              <h5>Account Detils</h5>
-              <table class="table">
-                  <thead>
-                  <tr>
-                      <th>Date</th>
-                      <th>Description</th>
-                      <th>Amount</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>2021-03-01</td>
-                          <td>Goods</td>
-                          <td>100.00</td>
-                      </tr>
-                      <tr>
-                          <td>2021-03-02</td>
-                          <td>Materials</td>
-                          <td>200.00</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </td>
-      </tr>
-      <tr>
-          <td><span class="expandChildTable"></span></td>
-          <td>John Doe</td>
-          <td>0456787899907</td>
-      </tr>
-      <tr class="childTableRow">
-          <td colspan="3">
-              <h5>Account Detils</h5>
-              <table class="table">
-                  <thead>
-                  <tr>
-                      <th>Date</th>
-                      <th>Description</th>
-                      <th>Amount</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>2021-03-07</td>
-                          <td>Food</td>
-                          <td>150.00</td>
-                      </tr>
-                      <tr>
-                          <td>2021-03-10</td>
-                          <td>Vehicles</td>
-                          <td>240.00</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </td>            
-      </tr>
-      <tr>
-          <td><span class="expandChildTable"></span></td>
-          <td>Grace Jones</td>
-          <td>02304524663</td>
-      </tr>
-      <tr class="childTableRow">
-          <td colspan="3">
-              <h5>Account Detils</h5>
-              <table class="table">
-                  <thead>
-                  <tr>
-                      <th>Date</th>
-                      <th>Description</th>
-                      <th>Amount</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>2021-03-05</td>
-                          <td>Equipment</td>
-                          <td>230.00</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </td>            
-      </tr>
+
+    
   </table>
   </div>
   </div>
@@ -190,5 +109,117 @@
       })
   });
   </script>
+  <script>
+    var myArray = [
+    {
+        "title": "What are these?",
+        "score": 12,
+        "id": "133w2zb",
+        "url": "https://i.redd.it/q2rbj37r83xa1.jpg",
+        "num_comments": 19,
+        "body": "I bought a large assortment of arduino and raspberry pi components at a yard sale. These are the only things I don\u2019t recognize, no numbers on it to go off",
+        "created": 1682871424.0
+    },
+    {
+        "title": "Fastest water dispenser to save lives",
+        "score": 647,
+        "id": "1330ape",
+        "url": "https://v.redd.it/9pggcxr6puwa1",
+        "num_comments": 49,
+        "body": "",
+        "created": 1682785994.0
+    },
+    {
+        "title": "Help with USB interference between Arduino UNO data logger and USB OBD logger",
+        "score": 4,
+        "id": "13416oe",
+        "url": "https://v.redd.it/oq4ecsxma4xa1",
+        "num_comments": 6,
+        "body": "Does anyone know how to get rid of interference between my arduino UNO data logger and my OBD data logger? You can see as soon as I plug in the OBD USB the pressure values bug out. \n\nBasically I am using an UNO to read temp and pressure data for our race truck. I also need to use the OBD data logger to monitor data. The arduino is passing serial data to the computer and then I wrote a python script to present and record in this GUI. I have tried all the different ports as well as getting a powered USB hub to plug one of the cables into, nothing seems to work. Any help is appreciated. \n\nTopped off with attempting to plug the ISB in the wrong way. ",
+        "created": 1682884192.0
+    },
+    {
+        "title": "Arduino with Home Assistent",
+        "score": 4,
+        "id": "1342ydj",
+        "url": "https://www.reddit.com/r/arduino/comments/1342ydj/arduino_with_home_assistent/",
+        "num_comments": 1,
+        "body": "Im very new in this thing, thats why I dont know very much. My question is, if i can control my Arduino IoT Cloud with google home Assistent or any other Assistent. I want to control them by speaking.",
+        "created": 1682888624.0
+    },
+    {
+        "title": "Help solving esptool.py upload error problem",
+        "score": 1,
+        "id": "134aswn",
+        "url": "https://www.reddit.com/r/arduino/comments/134aswn/help_solving_esptoolpy_upload_error_problem/",
+        "num_comments": 4,
+        "body": "ESP8266 Error in esptool.py when uploading program. Please help.\n\nMy ESP8266 was running perfectly two days back. But today it started showing this message when I tried to upload any program to it, even if code compile correctly.\n\nError message:\n\"A fatal [esptool.py] error occurred: Cannot configure the port, something went wrong. Original message: PermissionError(13, 'A device attached to the system is not functioning.', None, 31)\"\n\nMore Information: esp8266 was working fine two days before. Today i after some updates in ardiuno Ide and Esp8266 library, it started showing this error. I also tried deleting ide and esp board library and reinstalling but not working. \nIf there is no solution,should i order new one? \nPlease help.",
+        "created": 1682909758.0
+    },
+    {
+        "title": "Is there a way to messure toxic contents in water with an arduino and sensors?",
+        "score": 5,
+        "id": "133z4yh",
+        "url": "https://www.reddit.com/r/arduino/comments/133z4yh/is_there_a_way_to_messure_toxic_contents_in_water/",
+        "num_comments": 5,
+        "body": "Obviously bacteria would be difficult to messure with sensors, but what about heavy metals? Is there an arduino sensor for that?",
+        "created": 1682879041.0
+    },
+    {
+        "title": "Analog meter based indoor weather station.",
+        "score": 198,
+        "id": "1335u1f",
+        "url": "https://i.redd.it/y8m3t4uocxwa1.png",
+        "num_comments": 12,
+        "body": "Displays indoor temp, humidity, barometric pressure and pressure trends.",
+        "created": 1682800107.0
+    },
+    {
+        "title": "I made a device to track how much cereal you have that you can make for $10",
+        "score": 0,
+        "id": "1348d30",
+        "url": "https://youtu.be/IKeSMpT3GLU",
+        "num_comments": 18,
+        "body": "",
+        "created": 1682902721.0
+    },
+    {
+        "title": "does an lcd send any information back to the master through an i2c bus?",
+        "score": 3,
+        "id": "133z902",
+        "url": "https://www.reddit.com/r/arduino/comments/133z902/does_an_lcd_send_any_information_back_to_the/",
+        "num_comments": 4,
+        "body": "When connecting an lcd to an Arduino over i2c, does the screen send any information to the Arduino, such as a signal that it is ready to start receiving data, or perhaps a message to say if it has encountered any errors?\n\nThe other day, out of curiosity, I hooked up 2 lcd's with the same i2c address to the same bus on an Arduino, and to my surprise, it actually works perfectly. Everything I send to the screens appears perfectly on both screens. This was a surprising result because I had always learned that 2 devices cannot use the same i2c address without causing collisions.\n\nTo me, there seems to be only 2 possible explanations, and I'm curious which one is correct, or if there's another solution I'm not seeing. Either (1) the screens do not send any information back to the Arduino, they only receive data, or (2), they do send some data back, but they coincidentally are always sending it in perfect unison so they never notice a collision with each other.\n\nI find the second explanation to be less believable, but I'm curious to know why this setup works so perfectly. Could this be reliably expanded? If I for some reason wanted to build something that had 5 or more screens that all displayed the same information, could I just keep adding on more screens that share the same i2c address?",
+        "created": 1682879323.0
+    }
+]
+
+buildTable(myArray)
+
+
+
+function buildTable(data){
+    var table = document.getElementById('myTable')
+
+    for (var i = 0; i < data.length; i++){
+        var newRow = 
+        `<tr>
+            <td><span class="expandChildTable"></span></td>
+            <td>${data[i].title}</td>
+            <td>${data[i].score}</td>
+        </tr>
+        <tr class="childTableRow">
+            <td colspan="3">
+              <p>${data[i].body}</p>
+            </td>
+        </tr>
+        <tr>`;
+
+        table.innerHTML += newRow;
+
+    }
+}
+
+</script>
 
 {% endblock %}
