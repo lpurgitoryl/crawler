@@ -1,3 +1,3 @@
 call activate crawler
-flask --app app run --debugger
+flask --app app run
 call conda deactivate

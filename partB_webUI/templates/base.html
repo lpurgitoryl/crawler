@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="css/custom.css" rel="stylesheet" />
     <style>
         .message {
             padding: 10px;
@@ -27,16 +31,17 @@
 </head>
 <body>
     <nav>
-        <a href="{{ url_for('index') }}">FlaskApp</a>
-        <a href="{{ url_for('create') }}">Create</a>
-        <a href="#">About</a>
+        <a href="{{ url_for('index') }}">R'Indexer</a>
+        {# <a href="#">About</a> #} 
     </nav>
     <hr>
-    <div class="content">
-        {% for message in get_flashed_messages() %}
-            <div class="alert">{{ message }}</div>
-        {% endfor %}
+    <div class="content col-lg-9">
         {% block content %} {% endblock %}
     </div>
+    <div class="table col-lg-9">
+        {% block table %} {% endblock %}
+    </div>
+
+
 </body>
 </html>

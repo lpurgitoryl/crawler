@@ -1,0 +1,130 @@
+[    
+    
+{
+    "title": "What are these?",
+    "score": 12,
+    "id": "133w2zb",
+    "url": "https://i.redd.it/q2rbj37r83xa1.jpg",
+    "num_comments": 19,
+    "body": "I bought a large assortment of arduino and raspberry pi components at a yard sale. These are the only things I don\u2019t recognize, no numbers on it to go off",
+    "created": 1682871424.0
+},
+{
+    "title": "Fastest water dispenser to save lives",
+    "score": 647,
+    "id": "1330ape",
+    "url": "https://v.redd.it/9pggcxr6puwa1",
+    "num_comments": 49,
+    "body": "",
+    "created": 1682785994.0
+},
+{
+    "title": "Help with USB interference between Arduino UNO data logger and USB OBD logger",
+    "score": 4,
+    "id": "13416oe",
+    "url": "https://v.redd.it/oq4ecsxma4xa1",
+    "num_comments": 6,
+    "body": "Does anyone know how to get rid of interference between my arduino UNO data logger and my OBD data logger? You can see as soon as I plug in the OBD USB the pressure values bug out. \n\nBasically I am using an UNO to read temp and pressure data for our race truck. I also need to use the OBD data logger to monitor data. The arduino is passing serial data to the computer and then I wrote a python script to present and record in this GUI. I have tried all the different ports as well as getting a powered USB hub to plug one of the cables into, nothing seems to work. Any help is appreciated. \n\nTopped off with attempting to plug the ISB in the wrong way. ",
+    "created": 1682884192.0
+},
+{
+    "title": "Arduino with Home Assistent",
+    "score": 4,
+    "id": "1342ydj",
+    "url": "https://www.reddit.com/r/arduino/comments/1342ydj/arduino_with_home_assistent/",
+    "num_comments": 1,
+    "body": "Im very new in this thing, thats why I dont know very much. My question is, if i can control my Arduino IoT Cloud with google home Assistent or any other Assistent. I want to control them by speaking.",
+    "created": 1682888624.0
+},
+{
+    "title": "Help solving esptool.py upload error problem",
+    "score": 1,
+    "id": "134aswn",
+    "url": "https://www.reddit.com/r/arduino/comments/134aswn/help_solving_esptoolpy_upload_error_problem/",
+    "num_comments": 4,
+    "body": "ESP8266 Error in esptool.py when uploading program. Please help.\n\nMy ESP8266 was running perfectly two days back. But today it started showing this message when I tried to upload any program to it, even if code compile correctly.\n\nError message:\n\"A fatal [esptool.py] error occurred: Cannot configure the port, something went wrong. Original message: PermissionError(13, 'A device attached to the system is not functioning.', None, 31)\"\n\nMore Information: esp8266 was working fine two days before. Today i after some updates in ardiuno Ide and Esp8266 library, it started showing this error. I also tried deleting ide and esp board library and reinstalling but not working. \nIf there is no solution,should i order new one? \nPlease help.",
+    "created": 1682909758.0
+},
+{
+    "title": "Is there a way to messure toxic contents in water with an arduino and sensors?",
+    "score": 5,
+    "id": "133z4yh",
+    "url": "https://www.reddit.com/r/arduino/comments/133z4yh/is_there_a_way_to_messure_toxic_contents_in_water/",
+    "num_comments": 5,
+    "body": "Obviously bacteria would be difficult to messure with sensors, but what about heavy metals? Is there an arduino sensor for that?",
+    "created": 1682879041.0
+},
+{
+    "title": "Analog meter based indoor weather station.",
+    "score": 198,
+    "id": "1335u1f",
+    "url": "https://i.redd.it/y8m3t4uocxwa1.png",
+    "num_comments": 12,
+    "body": "Displays indoor temp, humidity, barometric pressure and pressure trends.",
+    "created": 1682800107.0
+},
+{
+    "title": "I made a device to track how much cereal you have that you can make for $10",
+    "score": 0,
+    "id": "1348d30",
+    "url": "https://youtu.be/IKeSMpT3GLU",
+    "num_comments": 18,
+    "body": "",
+    "created": 1682902721.0
+},
+{
+    "title": "does an lcd send any information back to the master through an i2c bus?",
+    "score": 3,
+    "id": "133z902",
+    "url": "https://www.reddit.com/r/arduino/comments/133z902/does_an_lcd_send_any_information_back_to_the/",
+    "num_comments": 4,
+    "body": "When connecting an lcd to an Arduino over i2c, does the screen send any information to the Arduino, such as a signal that it is ready to start receiving data, or perhaps a message to say if it has encountered any errors?\n\nThe other day, out of curiosity, I hooked up 2 lcd's with the same i2c address to the same bus on an Arduino, and to my surprise, it actually works perfectly. Everything I send to the screens appears perfectly on both screens. This was a surprising result because I had always learned that 2 devices cannot use the same i2c address without causing collisions.\n\nTo me, there seems to be only 2 possible explanations, and I'm curious which one is correct, or if there's another solution I'm not seeing. Either (1) the screens do not send any information back to the Arduino, they only receive data, or (2), they do send some data back, but they coincidentally are always sending it in perfect unison so they never notice a collision with each other.\n\nI find the second explanation to be less believable, but I'm curious to know why this setup works so perfectly. Could this be reliably expanded? If I for some reason wanted to build something that had 5 or more screens that all displayed the same information, could I just keep adding on more screens that share the same i2c address?",
+    "created": 1682879323.0
+},
+{
+    "title": "Small eyes for me new friend",
+    "score": 246,
+    "id": "1332w9v",
+    "url": "https://v.redd.it/sgik7wi1qwwa1",
+    "num_comments": 15,
+    "body": "A small eyes to the new friend I\u2019m currently working on",
+    "created": 1682792490.0
+},
+{
+    "title": "Any reason these two basic codes that do the same thing have differing results?",
+    "score": 4,
+    "id": "133xm8e",
+    "url": "https://www.reddit.com/r/arduino/comments/133xm8e/any_reason_these_two_basic_codes_that_do_the_same/",
+    "num_comments": 17,
+    "body": "I was playing with the basic example code for Analog Read Voltage.\n\nI took this example code \n\n\" void loop() {  \n int sensorValue = analogRead(A0);  \n float voltage = sensorValue \\* (5.0 / 1023.0);  \n Serial.println(voltage);\"\n\nAnd then turned it into this.\n\n\"void loop() {  \n\u00a0 float voltage = analogRead(A0) \\* (5.0 / 1023.0);  \n Serial.println(voltage);  \n}\"\n\n&#x200B;\n\nThe data string printed in the serial monitor had a different range & Avg. Is this just random variation or something related to the code?",
+    "created": 1682875249.0
+},
+{
+    "title": "LCD Not Displaying Anything (Contrast Not Working)",
+    "score": 3,
+    "id": "133xlga",
+    "url": "https://www.reddit.com/gallery/133xlga",
+    "num_comments": 34,
+    "body": "",
+    "created": 1682875199.0
+},
+{
+    "title": "reading external XML only loads once",
+    "score": 3,
+    "id": "133xjtp",
+    "url": "https://www.reddit.com/r/arduino/comments/133xjtp/reading_external_xml_only_loads_once/",
+    "num_comments": 6,
+    "body": "I'm trying to read an external xml file and re-reading it every minute or so to update the values. I have it somewhat working but it only works the first time after the board is restarted. Then after that I get nothing.  Can someone give me an idea of why I can't get subsequent refreshes to the data after the initial loading?\n\nHere is the sketch:\n\n\\#include <ESP8266WiFi.h>  \n \\#include \"rssRead.hpp\"  \n   \n static rssRead rss;  \n const char \\*url = \"https://www.victoriaweather.ca/stations/UVicSci/current.xml\";  \n char pressuretrend\\[15\\];  \n char windspeed\\[3\\];  \n char windspeedheading\\[3\\];  \n char windspeedmax\\[3\\];  \n   \n const char \\*ssid = \"xxxxxxxx\";  \n const char \\*password = \"xxxxxxxxx\";  \n   \n unsigned long previousMillis = 0;  \n unsigned long interval = 10000;  \n   \n void setup() {  \n Serial.begin(115200);  \nconnectToWifi();  \n}  \n void connectToWifi() {  \n //connect to wifi  \n Serial.print(\"connecting to \");  \n Serial.println(ssid);  \n WiFi.mode(WIFI\\_STA);  \n WiFi.begin(ssid, password);  \n while (WiFi.status() != WL\\_CONNECTED) { //WAITING FOR WIFI  \n delay(500);  \n Serial.print(\".\");  \n }  \n Serial.println(\"\");  \n Serial.println(\"WiFi connected\");  \n Serial.print(\"IP address: \");  \n Serial.println(WiFi.localIP());  \n}  \n void loop() {  \n unsigned long currentMillis = millis();  \n if (currentMillis - previousMillis >= interval) {  \npreviousMillis = currentMillis;  \n   \n rss.begin();  \n delay(100);  \n rss.axs(url);  \n   \n strncpy(pressuretrend, rss.finds(\"pressure\\_trend\").c\\_str(), sizeof(pressuretrend));  \n strncpy(windspeed, rss.finds(\"wind\\_speed\").c\\_str(), sizeof(windspeed));  \n strncpy(windspeedheading, rss.finds(\"wind\\_speed\\_heading\").c\\_str(), sizeof(windspeedheading));  \n strncpy(windspeedmax, rss.finds(\"wind\\_speed\\_max\").c\\_str(), sizeof(windspeedmax));  \n   \n Serial.println(windspeedheading);  \n Serial.println(windspeedmax);  \n Serial.println(windspeed);  \n Serial.println(pressuretrend);  \n   \n rss.end();  \n  }  \n  }\n\nAnd here are the results. They aren't quite right but close. The second iteration of the loop gives me \"uni\" which I think is units and then it just goes blank after that. The desired results is updating the variables with new values every minute or so. \n\nWiFi connected  \nIP address: 192.168.1.133  \nSSW12   \n17.SSW12   \n12   \nrising slowly   \n\n\nuni",
+    "created": 1682875075.0
+},
+{
+    "title": "drawJpgFile not recognized in class Adafruit ST7735 library, as well as SD.h issues.",
+    "score": 2,
+    "id": "1340edl",
+    "url": "https://www.reddit.com/r/arduino/comments/1340edl/drawjpgfile_not_recognized_in_class_adafruit/",
+    "num_comments": 10,
+    "body": "I am having difficulties with my arduino code. I am trying to display an image \"Big_Win.jpg\" on my HiLetGo LCD 1.8\" screen using an SD card, but I keep recieving this error:\n```\n/Users/jacobscomputer2020/Desktop/LCD_Image_Display/LCD_Image_Display.ino: In function 'void setup()':\n/Users/jacobscomputer2020/Desktop/LCD_Image_Display/LCD_Image_Display.ino:27:7: error: 'class Adafruit_ST7735' has no member named 'drawJpgFile'; did you mean 'drawLine'?\n   tft.drawJpgFile(&file, 0, 0);\n       ^~~~~~~~~~~\n       drawLine\nMultiple libraries were found for \"SD.h\"\n  Used: /Users/jacobscomputer2020/Documents/Arduino/libraries/SD\n  Not used: /Users/jacobscomputer2020/Library/Arduino15/libraries/SD\nexit status 1\n\nCompilation error: 'class Adafruit_ST7735' has no member named 'drawJpgFile'; did you mean 'drawLine'?\n\n```\nFrom what I've gathered (based on my little coding experience), I think there are two problems here:\n1.) Multiple libraries that I have downloaded use \"SD.h\" and it doesn't know which one to use.\n2.) drawJpgFile for some reason isnt recognized as a proper function for Adafruit_ST7735.\n\nFor reference, I have these libraries installed:\n1.) SD by Arduino, Sparkfun\n2.) Adafruit BusIO by Adafruit\n3.) Adafruit GFX Library by Adafruit\n4.) Adafruit ST7735 and Adafruit ST7789 Library by Adafruit (a combined library I suppose)\n5.) Adafruit seesaw Library by Adafruit\n\nI have included my code below:\n```\n#include <Adafruit_GFX.h>\n#include <Adafruit_ST7735.h>\n#include <SD.h>\n\n#define TFT_CS 10\n#define TFT_RST 9\n#define TFT_DC 8\n\nAdafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);\n\nvoid setup() {\n  tft.initR(INITR_BLACKTAB);\n  tft.setRotation(1);\n  tft.fillScreen(ST7735_BLACK);\n\n  SD.begin(4);\n\n  File file = SD.open(\"/JPG_Slot_Machine_Images/Big_Win.jpg\");\n  if (!file) {\n    tft.setCursor(0, 0);\n    tft.setTextColor(ST7735_WHITE);\n    tft.setTextSize(2);\n    tft.println(\"File not found\");\n    while (1);\n  }\n\n  tft.drawJpgFile(&file, 0, 0);\n\n  file.close();\n}\n\nvoid loop() {\n  // Nothing to do here\n}\n```\nAny ideas?",
+    "created": 1682882148.0
+}
+
+]

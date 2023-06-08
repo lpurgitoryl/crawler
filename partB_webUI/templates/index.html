@@ -1,11 +1,194 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Messages {% endblock %}</h1>
-    {% for message in messages %}
-        <div class='message'>
-            <h3>{{ message['title'] }}</h3>
-            <p>{{ message['content'] }}</p>
-        </div>
-    {% endfor %}
+
+    <br>
+    <form method="get">
+        <label for="content"></label> 
+        <h3>Enter Query Below</h3>
+        <textarea name="content"
+                  placeholder="Query content"
+                  rows="10"
+                  cols="100"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        {# <button type="submit">Submit</button> #}
+        <input type="submit" value="Submit!">
+    </form>
+
+
+<script>
+	var myArray = [
+	    {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
+	    {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
+	    {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
+	    {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
+	    {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
+	    {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].name}</td>
+							<td>${data[i].age}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+
+
+{% endblock %}
+
+
+
+
+{% block table %}
+<style>
+    .expandChildTable:before {
+        content: "+";
+        display: block;
+        cursor: pointer;
+    }
+    .expandChildTable.selected:before {
+        content: "-";
+    }
+    .childTableRow {
+        display: none;
+    }
+    .childTableRow table {
+        border: 2px solid #555;
+    }
+    </style>
+
+<div class="wrapper">
+    <header>
+      <div class="container">
+      <h1 class="">Table with expandable rows</h1>
+      </div>
+    </header>
+    <div class="container">
+    <p class="alert alert-success">Shows when sm happens</p>
+  <table class="table">
+      <thead>
+          <tr>
+              <th></th>
+              <th>Result</th>
+              <th>Score</th>
+          </tr>
+      </thead>
+      <tr>
+          <td><span class="expandChildTable"></span></td>
+          <td>Fred Smith</td>
+          <td>01102299393</td>
+      </tr>
+      <tr class="childTableRow">
+          <td colspan="3">
+              <h5>Account Detils</h5>
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>2021-03-01</td>
+                          <td>Goods</td>
+                          <td>100.00</td>
+                      </tr>
+                      <tr>
+                          <td>2021-03-02</td>
+                          <td>Materials</td>
+                          <td>200.00</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td><span class="expandChildTable"></span></td>
+          <td>John Doe</td>
+          <td>0456787899907</td>
+      </tr>
+      <tr class="childTableRow">
+          <td colspan="3">
+              <h5>Account Detils</h5>
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>2021-03-07</td>
+                          <td>Food</td>
+                          <td>150.00</td>
+                      </tr>
+                      <tr>
+                          <td>2021-03-10</td>
+                          <td>Vehicles</td>
+                          <td>240.00</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </td>            
+      </tr>
+      <tr>
+          <td><span class="expandChildTable"></span></td>
+          <td>Grace Jones</td>
+          <td>02304524663</td>
+      </tr>
+      <tr class="childTableRow">
+          <td colspan="3">
+              <h5>Account Detils</h5>
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>2021-03-05</td>
+                          <td>Equipment</td>
+                          <td>230.00</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </td>            
+      </tr>
+  </table>
+  </div>
+  </div>
+   
+  <script src="//code.jquery.com/jquery.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script><!-- <script src="js/disqus-config.js"></script> -->
+  <script>
+  $(function() {
+      $('.expandChildTable').on('click', function() {
+          $(this).toggleClass('selected').closest('tr').next().toggle();
+      })
+  });
+  </script>
+
 {% endblock %}
