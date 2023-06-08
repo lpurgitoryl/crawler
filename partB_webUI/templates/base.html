@@ -8,40 +8,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="css/custom.css" rel="stylesheet" />
     <style>
-        .message {
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3
-        }
         nav a {
             color: #d64161;
             font-size: 3em;
             margin-left: 50px;
             text-decoration: none;
         }
-
-        .alert {
-            padding: 20px;
-            margin: 5px;
-            color: #970020;
-            background-color: #ffd5de;
-        }
-
     </style>
 </head>
-<body>
+<body class="container">
     <nav>
         <a href="{{ url_for('index') }}">R'Indexer</a>
         {# <a href="#">About</a> #} 
     </nav>
     <hr>
-    <div class="content col-lg-9">
+    <div class="container content col-lg-9">
         {% block content %} {% endblock %}
     </div>
-    <div class="table col-lg-9">
+    {% if user_Clicked  %}
+    <div class="container table col-lg-9">
         {% block table %} {% endblock %}
     </div>
-
+    {% endif %}
 
 </body>
 </html>
