@@ -161,3 +161,4 @@ cython_debug/
 
 credentials.json
 crawled_data/
+index/
