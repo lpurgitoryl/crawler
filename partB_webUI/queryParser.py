@@ -13,6 +13,7 @@ from org.apache.lucene.index import IndexReader
 
 if len(sys.argv) != 3:
     print("Usage: python3 searchEx.py <index_dir> <query>")
+    exit(1)
 
 index_dir = sys.argv[1]
 query = sys.argv[2]
@@ -109,13 +110,11 @@ for i in results:
     i[5] = i[5] * int(i[4]) / 1000000000
     i[4] = datetime.datetime.fromtimestamp(int(i[4])).strftime('%Y-%m-%d %H:%M:%S')
 results = sorted(results, key=lambda x: x[5], reverse=True)
-print("%s total matching documents." % len(results))
+# print("%s total matching documents." % len(results))
     #TODO: decide whether we need score or not
     #TODO: search by different fields if we can't get enough results
     #TODO: Maybe search by different field and add the score together?
     #TODO: generate a snippet as well? maybe?
 df = pd.DataFrame(results, columns=['author', 'id', 'subreddit', 'url', 'timestamp', 'score', 'title', 'snippet'])
-# print(df.to_json(orient='records', indent=4))
-with open('result.json', 'w') as f:
-    f.write(df.to_json(orient='records', indent=4))
+print(df.to_json(orient='records', indent=4))
     

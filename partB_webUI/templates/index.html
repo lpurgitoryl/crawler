@@ -8,7 +8,7 @@
         <h3>Enter Query Below</h3>
         <textarea name="content"
                   placeholder="Query content"
-                  rows="10"
+                  rows="1"
                   cols="80"
                   >{{ request.form['content'] }}</textarea>
         <br>
@@ -17,9 +17,6 @@
     </form>
 
    
-    <div>
-        <h3> this div is for testing querty delete after: {{ userQuery }}</h3>
-    </div>
 {% endblock %}
 
 
@@ -51,15 +48,17 @@
 <div class="container wrapper">
 
     <div >
-    <p class="alert alert-success">Query Results Below!</p>
+    <p class="alert alert-success" id="message">Query Results Below!</p>
     <table class="table" id="myTable">
-        <thead>
+        <thread>
             <tr>
                 <th></th>
                 <th>Result</th>
+                <th>Author</th>
+                <th>Subreddit</th>
                 <th>Score</th>
             </tr>
-        </thead>
+        </thread>
 
     </table>
     </div>
@@ -78,42 +77,26 @@
       })
   });
 
-var myArray = [
-    {
-        "title": "What are these?",
-        "score": 12,
-        "id": "133w2zb",
-        "url": "https://i.redd.it/q2rbj37r83xa1.jpg",
-        "num_comments": 19,
-        "body": "I bought a large assortment of arduino and raspberry pi components at a yard sale. These are the only things I don\u2019t recognize, no numbers on it to go off",
-        "created": 1682871424.0
-    },
-    {
-        "title": "Fastest water dispenser to save lives",
-        "score": 647,
-        "id": "1330ape",
-        "url": "https://v.redd.it/9pggcxr6puwa1",
-        "num_comments": 49,
-        "body": "",
-        "created": 1682785994.0
-    }
-]
+var myArray = {{result | safe}};
 
 buildTable(myArray)
 
 function buildTable(data){
     var table = document.getElementById('myTable')
-
+    var msg = document.getElementById('message')
+    msg.innerHTML += `\n${data.length} documents found!`
     for (var i = 0; i < data.length; i++){
         var newRow = 
         `<tr>
             <td><span class="expandChildTable"></span></td>
             <td>${data[i].title}</td>
+            <td>${data[i].author}</td>
+            <td>${data[i].subreddit}</td>
             <td>${data[i].score}</td>
         </tr>
         <tr class="childTableRow">
-            <td colspan="3">
-              <p>${data[i].body}</p>
+            <td colspan="5">
+              <p>${data[i].snippet}</p>
             </td>
         </tr>
         <tr>`;
