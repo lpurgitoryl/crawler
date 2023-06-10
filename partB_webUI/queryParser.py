@@ -9,6 +9,7 @@ from org.apache.lucene.queryparser.classic import QueryParser
 from org.apache.lucene.store import SimpleFSDirectory
 from org.apache.lucene.search import IndexSearcher
 from org.apache.lucene.search.similarities import BM25Similarity
+from org.apache.lucene.index import IndexReader
 
 if len(sys.argv) != 3:
     print("Usage: python3 searchEx.py <index_dir> <query>")
@@ -35,37 +36,68 @@ queryBySubreddit = QueryParser("subreddit", analyzer).parse(query)
 queryByID = QueryParser("id", analyzer).parse(query)
 regularQuery = QueryParser("", analyzer).parse(query)
 hitDocs = searcher.search(queryByBody, 10).scoreDocs #returns top 10 results
+snippetLen = 50
 for document in hitDocs:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 
 tmp = searcher.search(queryByTitle, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 hitDocs += tmp
 tmp = searcher.search(queryByAuthor, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 
 tmp = searcher.search(regularQuery, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 tmp = searcher.search(queryBySubreddit, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 tmp = searcher.search(queryByID, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
-    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title")])
+    snippet = doc.get("body").split()
+    if len(snippet) > snippetLen:
+        snippet = ' '.join(snippet[:snippetLen]) + "..."
+    else:
+        snippet = ' '.join(snippet)
+    results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
 hashTable = {}
 for i in results:
@@ -82,6 +114,8 @@ print("%s total matching documents." % len(results))
     #TODO: search by different fields if we can't get enough results
     #TODO: Maybe search by different field and add the score together?
     #TODO: generate a snippet as well? maybe?
-df = pd.DataFrame(results, columns=['author', 'id', 'subreddit', 'url', 'timestamp', 'score', 'title'])
-print(df.to_json(orient='records', indent=4))
+df = pd.DataFrame(results, columns=['author', 'id', 'subreddit', 'url', 'timestamp', 'score', 'title', 'snippet'])
+# print(df.to_json(orient='records', indent=4))
+with open('result.json', 'w') as f:
+    f.write(df.to_json(orient='records', indent=4))
     

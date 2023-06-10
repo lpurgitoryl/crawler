@@ -162,3 +162,4 @@ cython_debug/
 partA_crawler/credentials.json
 partB_webUI/crawled_data/
 partB_webUI/index/
+partB_webUI/result.json
