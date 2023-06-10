@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script is used to run part B of the project
 read -e -p "Enter the path of the data folder: " DATA_PATH
+pip3 install flask pandas
 if [ -d "./index" ]; then
     echo "Directory exists"
 else

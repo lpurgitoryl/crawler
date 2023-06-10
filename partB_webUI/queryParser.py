@@ -1,6 +1,5 @@
-import sys, os, lucene, json, pandas as pd
+import sys, os, lucene, pandas as pd
 import datetime
-import itertools
 
 from java.nio.file import Paths
 from org.apache.lucene.analysis.standard import StandardAnalyzer
