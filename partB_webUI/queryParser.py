@@ -107,7 +107,7 @@ for i in results:
     else:
         hashTable[i[1]] = i
 for i in results:
-    i[5] = i[5] * int(i[4]) / 1000000000
+    i[5] = round(i[5] * int(i[4]) / 1000000000, 3)
     i[4] = datetime.datetime.fromtimestamp(int(i[4])).strftime('%Y-%m-%d %H:%M:%S')
 results = sorted(results, key=lambda x: x[5], reverse=True)
 # print("%s total matching documents." % len(results))

@@ -56,6 +56,7 @@
                 <th>Result</th>
                 <th>Author</th>
                 <th>Subreddit</th>
+                <th>Date</th>
                 <th>Score</th>
             </tr>
         </thread>
@@ -92,10 +93,11 @@ function buildTable(data){
             <td>${data[i].title}</td>
             <td>${data[i].author}</td>
             <td>${data[i].subreddit}</td>
+            <td>${data[i].timestamp}</td>
             <td>${data[i].score}</td>
         </tr>
         <tr class="childTableRow">
-            <td colspan="5">
+            <td colspan="6">
               <p>${data[i].snippet}</p>
             </td>
         </tr>
