@@ -159,5 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-credentials.json
-crawled_data/
+partA_crawler/credentials.json
+partB_webUI/crawled_data/
+partB_webUI/index/
