@@ -40,7 +40,7 @@ except:
     print("Error: Invalid JSON")
     exit(1)
 
-lucene.initVM(vmargs=['-Djava.awt.headless=true'])
+lucene.initVM()
 
 store = SimpleFSDirectory(Paths.get(index_dir))
 analyzer = StandardAnalyzer()
@@ -58,9 +58,11 @@ writer = IndexWriter(store, config)
 """
 title: indexed, tokenized, and stored
 author: indexed, not tokenized, and stored
-id: indexed, not tokenized, and not stored
+id: indexed, not tokenized, and stored
 body: indexed, tokenized, and stored //not a good practice to store body in index, but we will do it for this project
-subreddit: indexed, not tokenized, and not stored
+subreddit: indexed, not tokenized, and stored
+timestamp: indexed, not tokenized, and stored
+url: indexed, not tokenized, and not stored
 """
 type0 = FieldType()
 type0.setStored(True)
@@ -81,6 +83,8 @@ for doc in data:
     document.add(Field("body", doc["body"], type0))
     document.add(Field("subreddit", doc["subreddit"], type1))
     document.add(Field("author", doc["author"], type1))
+    document.add(Field("timestamp", str(doc["timestamp"]), type1))
+    document.add(Field("url", doc["url"], type1))
     writer.addDocument(document)
 writer.commit()
 writer.close()
