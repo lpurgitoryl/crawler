@@ -37,7 +37,7 @@ queryBySubreddit = QueryParser("subreddit", analyzer).parse(query)
 queryByID = QueryParser("id", analyzer).parse(query)
 regularQuery = QueryParser("", analyzer).parse(query)
 hitDocs = searcher.search(queryByBody, 10).scoreDocs #returns top 10 results
-snippetLen = 50
+snippetLen = 1000
 for document in hitDocs:
     doc = searcher.doc(document.doc)
     snippet = doc.get("body").split()
@@ -58,7 +58,6 @@ for document in tmp:
         snippet = ' '.join(snippet)
     results.append([doc.get("author"), doc.get("id"), doc.get("subreddit"), doc.get("url"), doc.get("timestamp"), document.score, doc.get("title"), snippet])
 
-hitDocs += tmp
 tmp = searcher.search(queryByAuthor, 10).scoreDocs
 for document in tmp:
     doc = searcher.doc(document.doc)
@@ -106,6 +105,7 @@ for i in results:
         hashTable[i[1]][5] = hashTable[i[1]][5] + i[5]
     else:
         hashTable[i[1]] = i
+results = list(hashTable.values())
 for i in results:
     i[5] = round(i[5] * int(i[4]) / 1000000000, 3)
     i[4] = datetime.datetime.fromtimestamp(int(i[4])).strftime('%Y-%m-%d %H:%M:%S')
